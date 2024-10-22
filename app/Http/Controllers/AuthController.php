@@ -83,13 +83,11 @@ class AuthController extends Controller
     {
         if(Auth::check()){
             $quotations = Quotations::all();
-           
-            $items = DB::table('quotations')->leftJoin('items', 'items.quotation_id', '=', 'quotations.id')
-                ->select('quotations.quotations_name as quotationsName', 'quotations.currency as currency','quotations.payment_term as payment_term', 
-                    'quotations.delivery_period as delivery_period', 'quotations.unit_cost as unit_cost', 'quotations.total_cost as total_cost', 
-                    'items.item as item', 'items.id as id','items.total_cost as total_cost')->get(); 
+            $lowestAmount = $quotations->min('quotation_amount');
+    
+            return view('items.index', compact('quotations', 'lowestAmount'));
                     
-            return view('items.index', ['items' => $items ,'quotations' =>  $quotations ]);
+            //return view('items.index', ['quotations' => $quotations ,'quotations' =>  $lowestAmount ]);
         
       
         }

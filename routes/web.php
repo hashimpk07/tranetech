@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ItemQuotationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,4 +27,4 @@ Route::post('post-registration', [AuthController::class, 'postRegistration'])->n
 Route::get('dashboard', [AuthController::class, 'dashboard']); 
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('excel.export', [AuthController::class, 'export'])->name('excel.export');
+Route::get('excel.export', [ItemQuotationController::class, 'export'])->name('excel.export');

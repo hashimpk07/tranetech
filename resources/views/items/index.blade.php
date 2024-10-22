@@ -38,17 +38,47 @@
                 </tr>
             </thead>
             <tbody id="quotationTable">
+            @foreach($quotations as $quotation)
             <tr>
-                 @foreach($quotations as $quotation)
+              
                 <td colspan="5">
-                Net Total Valvue
-                </td> 
-               
-                    <td>{{ number_format($quotation->unit_cost, 2) }}</td>
-                    <td>{{ number_format($quotation->total_cost, 2) }}</td> 
-                @endforeach
+                    1
+                </td>
+                <td>{{ number_format($quotation->unit_cost, 2) }}</td>
+                <td>{{ number_format($quotation->total_cost, 2) }}</td> 
+
+                <td>{{ number_format($quotation->unit_cost, 2) }}</td>
+                <td>{{ number_format($quotation->total_cost, 2) }}</td> 
+
+                <td>{{ number_format($quotation->unit_cost, 2) }}</td>
+                <td>{{ number_format($quotation->total_cost, 2) }}</td> 
+                
         </tr>
+        @endforeach
             </tbody>
+            <thead>
+                <tr>
+                    <th colspan="4">Supplier Name</th>
+                    <th colspan="7">Awarded Line</th>
+                </tr>
+                <tr>
+                    <th colspan="4">Accurate Meezan Trading LLC</th>
+                    <th colspan="7">1</th>
+                </tr>
+                <tr>
+                    <th colspan="4">Awarded Submission Recommendation</th>
+                    <th colspan="7"></th>
+                </tr>
+                <tr>
+                    <th colspan="4">Item # (1) To M/s ccurate Meezan Trading LLC @ AED 126,000</th>
+                    <th colspan="7"><input type="text" /></th>
+                </tr>
+                <tr>
+                    <th colspan="4"><textarea /></th>
+                    
+                  
+                </tr>
+            </thead>
           
         </table>
     </div>

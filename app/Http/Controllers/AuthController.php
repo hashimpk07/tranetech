@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Items;
 use App\Models\Quotations;
 
+
 use Session;
 use App\Models\User;
 use Hash;  
@@ -123,5 +124,6 @@ class AuthController extends Controller
         Auth::logout();
         return Redirect('login');
     }
+
 
 }
